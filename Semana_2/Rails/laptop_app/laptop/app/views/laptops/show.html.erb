@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+		</head>
+		<body>
+			<h3> 
+				<strong> Brand: </strong>
+				<%= @laptop.Brand %>
+				<strong> Model: </strong>
+				<em><%= @laptop.Model %></em>
+			</h3>
+				<div>
+					<p> Processor_brand: </p>
+					<%= @laptop.Processor_brand %>
+					<p> RAM_size </p>
+					<%= @laptop.RAM_size %>
+					<p> Price </p>
+					<%= @laptop.Price %>
+				</div>
+
+				<p>
+					<%= link_to 'Back', laptop_path %>
+				</p>
+				<p>
+					<%= link_to 'Edit', edit_laptop_path(@laptop) %>
+				</p>
+		</body>
+	</html>

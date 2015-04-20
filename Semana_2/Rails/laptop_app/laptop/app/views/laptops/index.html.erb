@@ -1,0 +1,29 @@
+<!DOCTYPE HTML >
+	<html>
+		<head>
+		</head>
+		<body>
+			<header>
+				<h1><strong> LAPTOPS LIST</strong></h1>
+			</header>
+			<nav>
+			</nav>
+			<article>
+				<p> Please, introduce a new item to the list:</p>
+				<% @laptops.each do |laptop| %> 
+				<div>
+					<%= laptop.Brand %>
+					<%= link_to 'Show', laptop_path(laptop) %>
+					<%= button_to 'Destroy', laptop_path(laptop), method: :delete, data: { confirm: 'Are you sure you want to delete this item?'} %>
+				</div>
+				<% end %>
+
+				<p>
+					<%= link_to 'New laptop', new_laptop_path %>
+
+				</p>
+			
+
+			</article>
+		</body>
+	</html>

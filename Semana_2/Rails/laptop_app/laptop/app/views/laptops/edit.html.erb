@@ -1,0 +1,35 @@
+<!DOCTYPE HTML >
+	<html>
+		<head>
+		</head>
+		<body>
+			<%= form_for :laptop, url: laptop_path(@laptop), method: :patch do |f| %>
+				<p>
+					<%= f.label :Brand %><br>
+					<%= f.text_field :Brand %>
+				</p>
+				<p>
+					<%= f.label :Model %><br>
+					<%= f.text_field :Model %>
+				</p>
+				<p>
+					<%= f.label :Processor_brand %><br>
+					<%= f.text_field :Processor_brand %>
+				</p>
+				<p>
+					<%= f.label :RAM_size %><br>
+					<%= f.text_field :RAM_size %>
+				</p>
+				<p>
+					<%= f.label :Price %><br>
+					<%= f.text_field :Price %>
+				</p>
+				<p>
+					<%= f.submit %>
+				</p>
+			<% end %>
+
+			<p><%= link_to 'Back', laptop_path %></p>
+
+		</body>
+	</html>
