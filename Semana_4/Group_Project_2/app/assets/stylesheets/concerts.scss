@@ -1,0 +1,18 @@
+body {
+  background-color: PowderBlue;
+  font-family: "Baskerville";
+}
+
+#like-button {
+  border-style: none;
+  background-color: #215389;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.liked {
+  background-color: #42B1E5 !important;
+}
