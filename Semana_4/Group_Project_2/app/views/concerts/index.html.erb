@@ -1,4 +1,4 @@
-
+<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -10,40 +10,47 @@
 <body>
 
 <header>
-   La web de los conciertos
+   <img src="http://i60.tinypic.com/fmj2hy.jpg" height="100%" width="100%"//>
 </header>
 
 <article>
-<h1>Today conecerts:</h1> 
-<% @concerts.each do |concert|%>
-<div>
-	<%= link_to concert.band_name, concert_path(concert)%>
-	<%= concert.date %>
-	<%= link_to 'Show',  concert_path(concert)%>
-	<%= link_to 'Destroy', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %>
-</div>
-<% end %>
+	<h3>Conciertos hoy...</h3> 
+		<% @concerts.each do |concert|%>
+	<div>
+		<%= link_to concert.band_name, concert_path(concert)%>
+		<%= concert.date %>
+		<%= link_to 'Show',  concert_path(concert)%>
+		<%= link_to 'Destroy', concert_path(concert), method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+	<% end %>
+	<h3>Conciertos con más likes...</h3>
+		<% @concertsLikes.each do |concertsLikes| %>
+	<div>
+		<a><%= link_to concertsLikes.band_name, concert_path(concertsLikes) %></a> 
+		<%= concertsLikes.likes %> likes!
+	</div>
+	<% end %>
 
 </article>
 
-<p>
-    <%= link_to 'New concert', new_concert_path %>
-</p>
+	<p class ="button">
+   	 	<%= link_to 'Añadir nuevo concierto', new_concert_path %>
+	</p>
 
 
 <aside>
-	<h3>Later this month...</h3>
+	<h3>Conciertos para el próximo mes...</h3>
 	<div>
 		<%= @concertsRestantesMes.each do |concertsRestantesMes|%>
 		<p>
-			<%= link_to concertsRestantesMes.band, concert_path(concertsRestantesMes)%>
+			<%= link_to concertsRestantesMes.band_name, concert_path(concertsRestantesMes)%>
 		</p>
 			<%= concertsRestantesMes.date %>
 	</div>
 	<% end %>
 </aside>
 
-<footer>Copyleft Ironhack 2015 ;)</footer>
+	<footer>Copyleft Ironhack 2015 ;)</footer>
 
   </body>
 </html>
